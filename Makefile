@@ -45,4 +45,13 @@ tmp/ikariam/apktool.yml: cache/ikariam.apk cache/apktool
 
 tmp/ikariam/dist/ikariam.apk: cache/keystore.keystore tmp/ikariam/apktool.yml cache/apktool
 	cache/apktool b tmp/ikariam
-	jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -storepass changeit -keystore $< $@ app
+	jarsigner -sigalg SHA1withRSA -digestalg SHA1 -storepass changeit -keystore $< $@ app
+
+################################################################################
+# Application Error: The connection to the server was unsuccessful.
+# (file:///android_asset/www/shared/lobby/index.html)
+
+tmp/ikariam/dist/ikariam.apk: tmp/application-error-connection.stamp
+tmp/application-error-connection.stamp: tmp/ikariam/apktool.yml
+	patch tmp/ikariam/res/xml/config.xml application-error-connection.patch
+	touch $@
