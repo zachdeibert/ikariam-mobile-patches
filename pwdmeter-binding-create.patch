@@ -1,0 +1,4 @@
+52c52
+<                         <input type="password" id="password"  data-bind="value: password, pwdMeter: true" />
+---
+>                         <input type="password" id="password"  data-bind="value: password" />

@@ -1,0 +1,9 @@
+19491c19491,19496
+< c=f.setOptions(k,j);if(this.isFormUpload(k)===true)
+---
+> c=f.setOptions(k,j);
+> if(c.url.startsWith("http:"))
+> {
+> c.url="https"+c.url.substr(4);
+> }
+> if(this.isFormUpload(k)===true)

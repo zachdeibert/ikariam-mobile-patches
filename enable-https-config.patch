@@ -1,0 +1,4 @@
+3c3
+<     <access origin="http://*" />
+---
+>     <access origin="*" />

@@ -1,0 +1,4 @@
+33c33
+<                             <input type="password" id="password" data-bind="value: screens.save.password, pwdMeter: true" />
+---
+>                             <input type="password" id="password" data-bind="value: screens.save.password" />
